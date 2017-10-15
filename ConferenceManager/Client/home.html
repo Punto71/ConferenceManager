@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="js/skins/web.css" type="text/css" media="screen"/>
+	<script src="js/webix_debug.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/supportUtils.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/guiDisign.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta  name = "viewport" content = "initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+    <title></title>
+        <script>
+            var _serviceUrl = "/Service/GetData.ashx?";
+    </script>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+
+        loadLocales();
+        loadUI();
+        loadCity(-1);
+        loadSectionList(-1, function () {
+            attachCityFilterEvent();
+        });
+
+        function loadUI() {
+            webix.ui(context);
+            if (webix.env.touch) {
+                webix.ui.fullScreen();
+                webix.ui(mobileUI);
+                attachEvents();
+            } else {
+                webix.ui(desktopUI);
+                attachEvents();
+            }
+        }
+
+        function loadConferenceList() {
+            var section = getSelectedSection();
+            var url = "/info";
+            if (section.id > 0)
+                url = "/" + section.value + url;
+            var city = $$("cityFilter").getValue();
+            sendRequest("conference" + url + "?city=" + city, function (res, code) {
+                if (!code || code == 200) {
+                    var list = $$("conferenceList");
+                    list.clearAll();
+                    var data = toObject(res);
+                    var conferenceList = [];
+                    for (d in data) {
+                        var info = data.info ? data.info : data[d].info;
+                        for (i in info)
+                            conferenceList.push(info[i]);
+                        if (!(data instanceof Array))
+                            break;
+                    }
+                    list.define("data", conferenceList);
+                } else if (code == 404) {
+                    webix.message(JSON.parse(res));
+                }
+            });
+        }
+
+        function loadCity(selectId) {
+            sendRequest("city/used", function (res) {
+                var cityBox = $$("cityFilter");
+                var data = toObject(res);
+                cityBox.define("options", data);
+                if (selectId)
+                    cityBox.setValue(selectId);
+            });
+
+        }
+
+        function loadSectionList(selectId, onComplete) {
+            sendRequest("section", function (res) {
+                var sectionList = $$("sectionList");
+                var data = toObject(res);
+                sectionList.define("data", data);
+                if (selectId)
+                    sectionList.select(selectId);
+                if (onComplete != null)
+                    onComplete();
+            });
+        }
+
+        var selectedConference;
+
+        function showEditor(entityName, formName, itemId) {
+            var url = itemId > 0 ? "editor/edit/"+ entityName +"/" + itemId :"editor/new/" + entityName;
+            sendRequest(url, function (res) {
+                var source = toObject(res);
+                prepareTextPattern(source.elements);
+                source.elements.push(formButtons);
+                editForm.elements = source.elements;
+                editForm.rules = source.rules;
+                modalEditor.body = editForm;
+                modalEditor.head = formName;
+                var form = webix.ui(modalEditor)
+                $$("editForm").setValues(prepareDateTime(source.item));
+                form.show();
+                $$("cancelButton").attachEvent("onItemClick", function (id, e, node) {
+                    $$("modalEditor").close();
+                });
+                $$("saveButton").attachEvent("onItemClick", function (id, e, node) {
+                    if ($$("editForm").validate()) {
+                        var obj = $$("editForm").getValues();
+                        if (entityName == "conference")
+                            obj["SECTION_ID"] = getSelectedSection().id;
+                        if (entityName == "member")
+                            obj["CONFERENCE_ID"] = selectedConference;
+                        saveElement(entityName, obj);
+                        selectedConference = undefined;
+                    }
+                });
+            });
+        }
+
+        function saveElement(entityName, element) {
+            var text = JSON.stringify(changeDateToAbsolute(element));
+            sendPut("editor/save/" + entityName, text, function (res) {
+                if (res.status && res.status != 200) {
+                    if (res.status == 409)
+                        webix.message(res.responseJSON, "error");
+                } else {
+                    element.id = res;
+                    $$("modalEditor").close();
+                    if (entityName == "conference") {
+                        loadCity(element.city);
+                        loadConferenceList();
+                    } else if (entityName == "section")
+                        loadSectionList(element.id);
+                    else if (entityName == "member")
+                        window.localStorage.setItem("user_id", res);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

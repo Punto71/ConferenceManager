@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.8">
+ <project-name>ER</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="(Целевая база данных)" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="98e36634-aaed-4955-b5f5-0e73f66e9e0b" name="Город" objectType="TABLE" physicalName="city" >
+   <remarks></remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="28ffefe1-9c8f-401f-ac41-c6289f97afa3" autoIncrement="false" autoIncrementSequenceName="city_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="00a30da0-8c6c-4093-b8db-af06ce050ac7" autoIncrement="false" autoIncrementSequenceName="city_name_seq" defaultValue="" name="Название" nullable="0" physicalName="name" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="75b657d8-bfc4-4bc5-86c7-61479673db27" autoIncrement="false" autoIncrementSequenceName="city_region_id_seq" defaultValue="" name="Область" nullable="0" physicalName="region_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX5" populated="true" UUID="fc7f7807-27c8-494a-b08d-e8182b993621" clustered="false" name="city_pk" physicalName="city_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC6" populated="true" UUID="2b236771-4c5d-46a6-9692-1313ff389cbc" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX7" populated="true" UUID="9fa4eb94-3aa4-4559-8d73-3213441c1b64" clustered="false" name="city_uniq" physicalName="city_uniq" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC8" populated="true" UUID="daed5ad9-7aad-48f5-9b13-f16525dbf099" ascendingOrDescending="UNSPECIFIED" column-ref="COL3" name="Название" physicalName="name" />
+     <index-column id="IDC9" populated="true" UUID="d91eff3b-c332-43be-970f-37a8ecde468d" ascendingOrDescending="UNSPECIFIED" column-ref="COL4" name="Область" physicalName="region_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB10" populated="true" UUID="eb2587b0-2981-4a44-97f5-98c75b51c7d0" name="Область" objectType="TABLE" physicalName="region" >
+   <remarks></remarks>
+   <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL11" populated="true" UUID="5f3fa1e8-3c56-4a9b-9b0f-94edda70f686" autoIncrement="false" autoIncrementSequenceName="region_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="72048e62-a93b-4321-a1be-e2bd781c8d4f" autoIncrement="false" autoIncrementSequenceName="region_name_seq" defaultValue="" name="Название" nullable="0" physicalName="name" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB103" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX13" populated="true" UUID="0fb1609c-297e-451e-9bc4-3d3c58a53c4d" clustered="false" name="region_pk" physicalName="region_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC14" populated="true" UUID="2b54f998-f2fb-42db-91e7-ae2b64732dba" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX15" populated="true" UUID="16dd4965-66a7-4865-81fe-1ffebc33483d" clustered="false" name="region_uniq" physicalName="region_uniq" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC16" populated="true" UUID="425a3bbe-f643-4f9d-9897-36a8af1e83ef" ascendingOrDescending="UNSPECIFIED" column-ref="COL12" name="Название" physicalName="name" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB17" populated="true" UUID="245a1780-4b5d-4c7a-804a-c963af0adaf7" name="Конференция" objectType="TABLE" physicalName="conference" >
+   <remarks></remarks>
+   <folder id="FOLTAB171" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL18" populated="true" UUID="d97ae772-923a-4b3f-b207-6d876bd381af" autoIncrement="false" autoIncrementSequenceName="conference_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="cd2f46af-c16a-401f-aaa5-46919237424e" autoIncrement="false" autoIncrementSequenceName="conference_name_seq" defaultValue="" name="Название" nullable="0" physicalName="name" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="05252593-d923-41aa-8a2c-726dd029a48f" autoIncrement="false" autoIncrementSequenceName="conference_event_date_seq" defaultValue="" name="Дата" nullable="0" physicalName="event_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks></remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="f92b1bdd-1e94-4451-91f9-6952303c3e2b" autoIncrement="false" autoIncrementSequenceName="conference_city_id_seq" defaultValue="" name="Город" nullable="0" physicalName="city_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL22" populated="true" UUID="1d86eb3b-549a-4ea9-bf82-0e8d2e613679" autoIncrement="false" autoIncrementSequenceName="conference_address_seq" defaultValue="" name="Адрес" nullable="0" physicalName="address" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL23" populated="true" UUID="5bd68c2b-361f-47a1-a79b-825efa97c5e2" autoIncrement="false" autoIncrementSequenceName="conference_order_number_seq" defaultValue="" name="Порядковый номер" nullable="1" physicalName="order_number" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB173" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB172" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB174" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX24" populated="true" UUID="855df4e0-3d8c-4e8b-9341-62086f35225a" clustered="false" name="conference_pk" physicalName="conference_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC25" populated="true" UUID="475af7a2-5838-45fb-99a4-27fd05a9b119" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX26" populated="true" UUID="f6481ce5-ef0a-48f8-8c9b-2b8eaf4ca2e2" clustered="false" name="conference_uniq" physicalName="conference_uniq" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC27" populated="true" UUID="00b6fb01-13b4-4d22-85bf-0875735282b8" ascendingOrDescending="UNSPECIFIED" column-ref="COL20" name="Дата" physicalName="event_date" />
+     <index-column id="IDC28" populated="true" UUID="8b18d24f-a5e7-4880-aed7-fcf418152a3f" ascendingOrDescending="UNSPECIFIED" column-ref="COL21" name="Город" physicalName="city_id" />
+     <index-column id="IDC29" populated="true" UUID="8a29169b-01c0-426c-a3e3-65bfb684ecca" ascendingOrDescending="UNSPECIFIED" column-ref="COL22" name="Адрес" physicalName="address" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB30" populated="true" UUID="e59f3aa0-1ad1-4698-98e5-ccabee04169d" name="Секция" objectType="TABLE" physicalName="section" >
+   <remarks></remarks>
+   <folder id="FOLTAB301" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL31" populated="true" UUID="28df62ae-fe1a-4eaf-b539-a333ca2725f5" autoIncrement="false" autoIncrementSequenceName="section_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL32" populated="true" UUID="8eceba4c-84bc-4cef-b76e-71b1bdca09af" autoIncrement="false" autoIncrementSequenceName="section_name_seq" defaultValue="" name="Название" nullable="0" physicalName="name" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB303" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB302" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB304" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX33" populated="true" UUID="e9990c45-9d57-4ff8-8696-b7edc2a2567a" clustered="false" name="section_pk" physicalName="section_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC34" populated="true" UUID="2d5c08c6-9e67-4ba3-a510-db86412a5562" ascendingOrDescending="UNSPECIFIED" column-ref="COL31" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX35" populated="true" UUID="fbe046dc-0bf2-4aea-bceb-b7fd6ed1eeea" clustered="false" name="section_uniq" physicalName="section_uniq" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC36" populated="true" UUID="b2e15619-3005-4c8b-a983-29ffdb5c5b6e" ascendingOrDescending="UNSPECIFIED" column-ref="COL32" name="Название" physicalName="name" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB37" populated="true" UUID="40694b38-51f2-4bc1-bf5b-62eb2fb859ae" name="Список конференций" objectType="TABLE" physicalName="section_conference_link" >
+   <remarks></remarks>
+   <folder id="FOLTAB371" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL38" populated="true" UUID="89ca8f0f-e883-4ff1-a78f-82ff6de38c5f" autoIncrement="false" autoIncrementSequenceName="section_conference_link_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="6773085d-28bd-4a31-aabe-81f670e88234" autoIncrement="false" autoIncrementSequenceName="section_conference_link_section_id_seq" defaultValue="" name="Секция" nullable="0" physicalName="section_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL40" populated="true" UUID="e3aa31dc-da81-4ac0-baf3-0bc1de7bdcde" autoIncrement="false" autoIncrementSequenceName="section_conference_link_conference_id_seq" defaultValue="" name="Конференция" nullable="0" physicalName="conference_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB373" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB372" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB374" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX41" populated="true" UUID="37e7f7ed-f25e-482d-8060-942d933e55c8" clustered="false" name="section_conference_link_pk" physicalName="section_conference_link_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC42" populated="true" UUID="5da3bd16-756f-489e-a0f7-32251a8670cb" ascendingOrDescending="UNSPECIFIED" column-ref="COL38" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX43" populated="true" UUID="9cf23e85-538f-4c83-9d37-89335928c61a" clustered="false" name="section_conference_link_uniq" physicalName="section_conference_link_uniq" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC44" populated="true" UUID="cde062c8-99af-4ec9-9402-7819dfe35332" ascendingOrDescending="UNSPECIFIED" column-ref="COL39" name="Секция" physicalName="section_id" />
+     <index-column id="IDC45" populated="true" UUID="5f00d3dc-e4b7-4b5a-845e-19ad732a929b" ascendingOrDescending="UNSPECIFIED" column-ref="COL40" name="Конференция" physicalName="conference_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB46" populated="true" UUID="6f8419cc-76c0-46e7-812d-4eb36d99f57f" name="Участник" objectType="TABLE" physicalName="member" >
+   <remarks></remarks>
+   <folder id="FOLTAB461" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL47" populated="true" UUID="714bc5ed-5573-4e21-86fb-e6503e2d79bd" autoIncrement="false" autoIncrementSequenceName="member_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL48" populated="true" UUID="efcfdb7d-15f1-4d9e-875e-b3df38617d04" autoIncrement="false" autoIncrementSequenceName="member_name_seq" defaultValue="" name="Имя" nullable="0" physicalName="name" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL49" populated="true" UUID="720f1d47-efae-4958-a988-a5bf4d237ae7" autoIncrement="false" autoIncrementSequenceName="member_email_seq" defaultValue="" name="E-mail" nullable="0" physicalName="email" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB463" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB462" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB464" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX50" populated="true" UUID="8c72c56f-3a82-436c-9878-d4b6fbe49d47" clustered="false" name="member_pk" physicalName="member_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC51" populated="true" UUID="d632aa38-54a7-4d4a-b097-981aa2c24314" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX52" populated="true" UUID="4a5e105c-9900-4d58-9063-e6ca067d91af" clustered="false" name="member_uniq" physicalName="member_uniq" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC53" populated="true" UUID="d5ead137-90f5-439e-b8c9-64209222d44c" ascendingOrDescending="UNSPECIFIED" column-ref="COL49" name="E-mail" physicalName="email" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB54" populated="true" UUID="0c3e72bb-64ad-45da-9feb-cf65f3d3f20e" name="Участники конференции" objectType="TABLE" physicalName="member_conference_link" >
+   <remarks></remarks>
+   <folder id="FOLTAB541" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL55" populated="true" UUID="164a3995-ce2e-43bb-a762-83420247a820" autoIncrement="false" autoIncrementSequenceName="member_conference_link_id_seq" defaultValue="" name="Id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL56" populated="true" UUID="1ebe0eb0-e9a8-4d40-975e-b797451b6644" autoIncrement="false" autoIncrementSequenceName="member_conference_link_member_id_seq" defaultValue="" name="Участник" nullable="0" physicalName="member_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL57" populated="true" UUID="b942d0d2-4f28-449a-a823-d1970a18bd44" autoIncrement="false" autoIncrementSequenceName="member_conference_link_conference_id_seq" defaultValue="" name="Конференция" nullable="0" physicalName="conference_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB543" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB542" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB544" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX58" populated="true" UUID="16d2d40f-97e6-4e79-b02c-f3db4305f0e3" clustered="false" name="member_conf_link_pk" physicalName="member_conf_link_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC59" populated="true" UUID="7f18a5e0-c839-4344-bf1a-0b5eb4887d75" ascendingOrDescending="UNSPECIFIED" column-ref="COL55" name="Id" physicalName="id" />
+    </index>
+    <index id="IDX60" populated="true" UUID="44ab5e45-31d9-4d84-8110-4f816df60791" clustered="false" name="member_conf_link_uniq" physicalName="member_conf_link_uniq" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC61" populated="true" UUID="1f67b3d9-fa74-46af-a168-d569ae72369c" ascendingOrDescending="UNSPECIFIED" column-ref="COL56" name="Участник" physicalName="member_id" />
+     <index-column id="IDC62" populated="true" UUID="508d3d91-3af2-4518-bc1e-dfb947dbbd45" ascendingOrDescending="UNSPECIFIED" column-ref="COL57" name="Конференция" physicalName="conference_id" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL63" populated="true" UUID="6751d653-fe8a-47a1-933d-a85b162f6f8b" deferrability="7" deleteRule="3" fk-table-ref="TAB17" fkCardinality="7" identifying="false" name="city_conference_fk" physicalName="city_conference_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP64" populated="true" UUID="88f0849a-75ea-4181-b4bf-461f313196a1" fk-column-ref="COL21" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL65" populated="true" UUID="120ad35c-1d84-407f-9558-409b0aff9e9a" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="region_city_fk" physicalName="region_city_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP66" populated="true" UUID="f548d39e-5abe-458c-bd5a-11be84871e34" fk-column-ref="COL4" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
+   </relationship>
+   <relationship id="REL67" populated="true" UUID="ed6e1902-0953-4d99-8111-0a95d329c924" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="false" name="conference_section_link_fk" physicalName="conference_section_link_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP68" populated="true" UUID="59dce135-a8e8-4c29-a805-80119db64a59" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+   </relationship>
+   <relationship id="REL69" populated="true" UUID="d39f0b6c-7a24-4776-8bfc-246f11686789" deferrability="7" deleteRule="3" fk-table-ref="TAB54" fkCardinality="7" identifying="false" name="conf_member_link_fk" physicalName="conf_member_link_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP70" populated="true" UUID="aecdac7b-06a6-4e1f-bcef-1baf11fff107" fk-column-ref="COL57" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+   </relationship>
+   <relationship id="REL71" populated="true" UUID="74cb370e-9f57-4320-9e97-77887ec0f451" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="false" name="section_conference_link_fk" physicalName="section_conference_link_fk" pk-table-ref="TAB30" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP72" populated="true" UUID="93bccbc8-3067-46d3-8280-146aa914f0f1" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL31" />
+   </relationship>
+   <relationship id="REL73" populated="true" UUID="7cc9f9d4-1057-471f-ad86-12564a686f6c" deferrability="7" deleteRule="3" fk-table-ref="TAB54" fkCardinality="7" identifying="false" name="member_conf_link_fk" physicalName="member_conf_link_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP74" populated="true" UUID="67acb798-5e0c-4a21-8810-607945751f1f" fk-column-ref="COL56" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.DB2DDLGenerator" allow-connection="false"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="444" y="315" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB10" x="731" y="236" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB17" x="126" y="252" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB30" x="346" y="27" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB37" x="122" y="138" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB46" x="745" y="68" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB54" x="453" y="147" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL65" pkConnection="0.38596491228070173" fkConnection="0.8873239436619719" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL63" pkConnection="0.5633802816901409" fkConnection="0.4444444444444444" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL71" pkConnection="0.23369565217391305" fkConnection="0.8333333333333334" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL67" pkConnection="0.3368421052631579" fkConnection="0.6166666666666667" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL69" pkConnection="0.24242424242424243" fkConnection="0.8591549295774648" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL73" pkConnection="0.8591549295774648" fkConnection="0.14084507042253522" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
