@@ -25,7 +25,7 @@ var modalEditor = {
 
 var searchCtrl = { view: "search", id: 'search', labelWidth: 100 };
 var addConferenceBtn = { view: "button", id: 'addConference', labelWidth: 110, value: "Добавить конференцию", tooltup: "Выберите секцию", width: 180 };
-var addSectionBtn = { view: "button", id: 'addSection', gravity: 0.9, value: "Добавить секцию" };
+var addSectionBtn = { view: "button", id: 'addSection', gravity: 0.9, minWidth:135, value: "Добавить секцию" };
 var cityCtrl = { view: "combo", id: 'cityFilter', labelWidth: 100, multiselect: false, gravity:0.4 };
 var sectionList = { id: "sectionList", view: "list", select: true, scroll: "y", template: "#value#", multiselect: false };
 var conferenceCtrl = {  id: "conferenceList", view: "list", select: false, scroll: "y", type: {height: 93},
