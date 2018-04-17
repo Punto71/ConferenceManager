@@ -22,9 +22,6 @@ namespace ConferenceManager.Service {
 
         private FileServerOptions configureStaticFiles() {
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Client");
-            if (Debugger.IsAttached) {
-                path = @"D:\Punto\Projects\ConferenceManager\ConferenceManager\Client";
-            }
             var physicalFileSystem = new PhysicalFileSystem(path);
             var options = new FileServerOptions {
                 EnableDefaultFiles = true,
