@@ -16,6 +16,9 @@ namespace ConferenceManager {
         public MainWindow() {
             InitializeComponent();
             MyNotifyIcon = new NotifyIcon();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
             MyNotifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
             MyNotifyIcon.MouseDoubleClick += MyNotifyIcon_MouseDoubleClick;
             MessageList.ItemsSource = Logger.MessageList;
